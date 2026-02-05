@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+ 
+  --font-sans: 'DM Sans', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+
+  --background: 120 20% 98%;      
+  --foreground: 160 47% 11%;      
+  
+  --primary: 142 76% 36%;        
+  --primary-foreground: 120 40% 98%;
+  
+  --secondary: 120 40% 96%;       
+  --secondary-foreground: 160 47% 11%;
+  
+  --muted: 120 40% 93%;
+  --muted-foreground: 160 16% 47%;
+  
+  --accent: 150 95% 30%;          /* Emerald accent */
+  --accent-foreground: 120 40% 98%;
+  
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+  
+  --border: 120 32% 91%;
+  --input: 120 32% 91%;
+  --ring: 142 76% 36%;
+  
+  --card: 0 0% 100%;
+  --card-foreground: 160 47% 11%;
+  
+  --radius: 0.75rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight text-foreground;
+  }
+}
+
+/* Custom Utilities for Polish */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl bg-white border-2 border-slate-200 
+    focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-200 outline-none;
+  }
+}
